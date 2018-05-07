@@ -1,0 +1,31 @@
+//
+// Imports
+//
+
+@import "variables";
+
+// nav tranpsarent
+$navbar-transparent-brand-hover-bg:       transparent;
+$navbar-transparent-toggler-hover-bg:     transparent;
+$navbar-transparent-toggler-border-color: transparent;
+
+// misc typography
+$headings-font-weight: 500;
+$btn-font-weight:      400;
+$letter-spacing-base:  -.02em;
+
+
+
+// blocks
+$block-title-font-size-sm: $font-size-base * 2.8;
+$block-title-font-size:    $font-size-base * 2.5;
+$block-lead-font-size-sm:  $font-size-base * 1.4;
+$block-vertical-padding:   100px;
+
+.card {
+  -webkit-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+@import "./components.scss";
