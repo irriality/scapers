@@ -1,18 +1,10 @@
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import {FeedComponent} from './pages/feed/feed.component';
+import {HomeComponent} from './pages/home/home.component';
+import {PlayerComponent} from './pages/player/player.component';
 
 export const routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'about'
-  },
-  {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
-    path: 'contact',
-    loadChildren: './contact/contact.module#ContactModule'
-  }
+  { path: 'player', component: PlayerComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'feed', component: FeedComponent},
+  { path: '**', redirectTo: 'home'},
 ];

@@ -1,28 +1,74 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>Universal App ( Server side rendering ) using NestJS and Angular 5+</h1>
-  <a href="https://angular.io" target="blank"><img height="155px" src="./assets/angular.svg" /></a>
-  <a href="http://nestjs.com/" target="blank"><img height="155px" src="./assets/nest-logo.png" alt="Nest Logo" /></a>
+<div [style.background]="background" [style.background-size]="cover" [style.height]="height">
+  <nav class="navbar navbar-dark bg-dark navbar-padded navbar-expand-sm mb-2">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <h2 class="text-uppercase my-0 font-secondary">Scapers</h2>
+      </a>
+
+      <button
+        class="navbar-toggler navbar-toggler-right d-md-none"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item ml-2">
+            <a class="nav-link font-weight-bold" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item ml-2">
+            <a class="nav-link font-weight-bold" [routerLink]="['/feed']" routerLinkActive="active">Activity Feed</a>
+          </li>
+          <li class="nav-item ml-2">
+            <a class="nav-link font-weight-bold" [routerLink]="['/player']" routerLinkActive="active">Player</a>
+          </li>
+          <li class="nav-item ml-2">
+            <a class="nav-link font-weight-bold" [routerLink]="['/clan']" routerLinkActive="active">Clan</a>
+          </li>
+          <li class="nav-item ml-2">
+            <a class="btn btn-primary" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-flex" [style.height]="searchHeight">
+    <div class="row justify-content-center align-self-center w-100">
+      <div class="col col-sm-4">
+        <input class="form-control form-control-lg bg-dark border-dark" placeholder="Search for a..."/>
+      </div>
+      <div class="col col-sm-2">
+        <button class="btn btn-primary btn-lg btn-block">
+          Player
+          <span class="icon icon-chevron-down float-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container page-title">
+    <div class="row justify-content-center">
+      <div class="col col-sm-6">
+        <div class="card bg-dark">
+          <div class="card-body text-center">
+            <h2 class="font-secondary text-white" [innerHTML]="pageTitle"></h2>
+            <span class="text-medium-blue" [innerHTML]="pageDetails"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+  <footer class="bg-darkest mt-5">
+    <div class="container text-primary text-right p-3">
+      Made with <span class="icon icon-heart"></span> by Alex and Irri
+    </div>
+  </footer>
 </div>
-
-<router-outlet></router-outlet>
-
-<ul>
-  <li><a routerLink="about">About</a></li>
-  <li><a routerLink="contact">Contact</a></li>
-</ul>
-
-<hr />
-
-<h4>Web Sockets</h4>
-
-<p>
-  <button (click)="ping()">Ping server using websockets</button>
-</p>
-
-<div>
-  Response from server:
-</div>
-<pre>
-{{ pongMessage$ | async | json }}
-</pre>
