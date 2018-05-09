@@ -16,6 +16,7 @@ import { renderModuleFactory } from '@angular/platform-server';
 import { FOLDER_CLIENT, FOLDER_DIST } from '../shared/constants';
 
 import { ApplicationModule } from './server.module';
+import {NestApplicationOptions} from '@nestjs/common/interfaces/nest-application-options.interface';
 
 const app = express();
 
@@ -24,7 +25,7 @@ async function bootstrap() {
     serverRender(app);
   }
 
-  const server = await NestFactory.create(ApplicationModule, app);
+  const server = await NestFactory.create(ApplicationModule, app, <NestApplicationOptions>{});
 
   await server.listen(process.env.PORT || 3666);
 }

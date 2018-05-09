@@ -1,7 +1,12 @@
-@import "toolkit/toolkit";
-.page-title {
-  margin-top: -50px;
-}
-.descriptor {
-  padding-left: 30px;
-}
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins/gradients";
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "core/layout";
+@import "core/spinner";
+@import "core/utils";
+@import "core/rtl";
+@import "core/responsive";
+@import "core/header";
+@import "core/sidebar";
+@import "core/charts";

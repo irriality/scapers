@@ -1,10 +1,8 @@
-import {FeedComponent} from './pages/feed/feed.component';
 import {HomeComponent} from './pages/home/home.component';
-import {PlayerComponent} from './pages/player/player.component';
+import {ChartsComponent} from './pages/charts/charts.component';
 
 export const routes = [
-  { path: 'player', component: PlayerComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'feed', component: FeedComponent},
+  { path: 'charts', component: ChartsComponent},
   { path: '**', redirectTo: 'home'},
 ];

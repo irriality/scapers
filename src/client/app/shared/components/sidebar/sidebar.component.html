@@ -1,0 +1,16 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+  <img class="img-fluid mx-auto my-2 d-block" src="http://via.placeholder.com/50x50" onError="this.onerror=null;this.src='http://via.placeholder.com/50x50';"/>
+  <div class="list-group">
+    <a routerLink="/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-home"></i>&nbsp;{{ 'Home' }}
+    </a>
+    <a routerLink="/charts" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-line-chart"></i>&nbsp;{{ 'Charts' }}
+    </a>
+    <div class="header-fields">
+      <a (click)="rltAndLtr()" class="list-group-item">
+        <span><i class="fa fa-user"></i>&nbsp; Sync</span>
+      </a>
+    </div>
+  </div>
+</nav>
